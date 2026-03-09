@@ -7,7 +7,8 @@
         <title>Blue Horizon</title>
         <link rel="stylesheet" href="style.css">
         <style>
-            
+
+                        
             .title{
                 color: white;
                 text-align: center;
@@ -123,7 +124,7 @@
 
             .card2:hover {
                 box-shadow: 0 15px 30px lightblue;
-                opacity: 0.8;
+                opacity: 1;
                 
             }
            
@@ -207,6 +208,69 @@
                 margin: auto;
                 padding: 50px;
             }
+
+            .learn-more-btn {
+                background-color: transparent;
+                color: lightblue;
+                border: 2px solid lightblue;
+                padding: 10px;
+                font-size: 14px;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                display: block;
+                width: 160px;
+                cursor: pointer;
+                margin:20px auto;
+                
+            }
+
+            .learn-more-btn:hover {
+                background-color: lightblue;
+                color: black;
+                border-color: lightblue;
+            }
+            
+            .explore-grid {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+                flex-wrap: wrap;
+                align-items: stretch;
+
+            }
+
+            .explore-card {
+                border: none;
+                background-color:black;
+                backdrop-filter: blur(5px);
+                border-radius: 10px;
+                padding: 0 0 30px 0;
+                overflow: hidden;
+                width: 300px;
+                box-shadow: 0 4px 8px black;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .explore-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .explore-card h3 {
+                text-align: center;
+                font-size: 20px;
+                margin-top: 0;
+                color: lightblue;
+                padding:0 25px;
+            }
  
         
         </style>
@@ -275,9 +339,7 @@
             </div>
         </section>
 
-
-<br><br><br><br><br><br><br>
-<h1 class="main-topic-title">Preserving Our Blue Planet</h1>
+<h1 class="main-topic-title">Preserving Our Blue Planet</h1><br>
 
 
             <section class="cards">
@@ -287,11 +349,11 @@
                     <p>Oceans sustain life, regulate climate, and protect biodiversity.</p>
                     <hr class="hr"><br>
                     <ul>
-                        <li>Produce over 50% of the world's oxygen</li>
+                        <li>Produce over 50% of oxygen</li>
                         <li>Support billions of people</li>
                         <li>Regulate global climate</li>
-                        <li>Provide food and livelihoods</li>
                     </ul>
+                    
                 </div>
 
                 <div class="card2">
@@ -304,6 +366,7 @@
                         <li>Overfishing</li>
                         <li>Climate change</li>
                     </ul>
+                    
                 </div>
 
                 <div class="card2">
@@ -316,13 +379,50 @@
                         <li>Join beach clean-ups</li>
                         <li>Support sustainable seafood</li>
                     </ul>
+                    
                 </div>
-                
 
-
-
+                <div class="card2">
+                    <img  src="images/car4.jpg" alt="coral reef" referrerpolicy="https://unsplash.com/photos/gray-and-black-fish-under-water-hqAGgNsMpEY">
+                    <h3>Protect Coral Reefs</h3><br>
+                    <p>Coral reefs are vital marine ecosystems that need protection.</p>
+                    <hr class="hr"><br>
+                    <ul>
+                        <li>Avoid touching or stepping on reefs</li>
+                        <li>Use reef-safe sunscreen</li>
+                        <li>Support coral restoration efforts</li>
+                    </ul>
+                    
+                </div>
             </section>
 
+            <h1 class="main-topic-title">Explore the Horizon</h1><br>
+
+            <section class="explore-grid">
+                <div class="explore-card">
+                    <img  src="images/exp1.jpg" alt="ocean pollution" referrerpolicy="https://unsplash.com/photos/a-body-of-water-that-has-a-bunch-of-things-in-it-CVm_rx7VjGM">
+                    <h3>Marine Pollution</h3><br>
+                    <input type="button" class="learn-more-btn" value="Learn More" onclick="window.location.href='pollution.html'">
+                </div>
+
+                <div class="explore-card">
+                    <img  src="images/exp2.jpg" alt="acidification" referrerpolicy="https://unsplash.com/photos/an-underwater-view-of-a-coral-reef-in-the-ocean-IocT1BO4yFI" >
+                    <h3>Ocean Acidification</h3><br>
+                    <input type="button" class="learn-more-btn" value="Learn More" onclick="window.location.href='acidification.html'">
+                </div>
+
+                <div class="explore-card">
+                    <img  src="images/exp3.jpg" alt="ocean economy" referrerpolicy="https://unsplash.com/photos/red-ship-on-sea-under-white-clouds-during-daytime-GQoB3k_u3CQ">
+                    <h3>Blue Economy</h3><br>
+                    <input type="button" class="learn-more-btn" value="Learn More" onclick="window.location.href='economy.html'">
+                </div>
+
+                <div class="explore-card">
+                    <img  src="images/exp4.jpg" alt="technology" referrerpolicy="https://pin.it/43feEaScV">
+                    <h3>Marine Technology</h3><br>
+                    <input type="button" class="learn-more-btn" value="Learn More" onclick="window.location.href='conservation.html'">
+                </div>
+            </section>
         </main>
 
 
