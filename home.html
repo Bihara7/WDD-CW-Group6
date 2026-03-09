@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blue Horizon</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            
+            .title{
+                color: white;
+                text-align: center;
+                opacity: 1;
+                padding:40px 30px;
+                line-height: 1.5;
+            }
+
+            .title p {
+
+                font-size: 80x;
+                margin: 0;
+                color:white;
+                font-family: arial, sans-serif;
+                font-weight: bold;
+                }
+
+            .title p.subtitle {
+                font-size: 20px;
+                margin: 0;
+                color:lightblue;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .title img{
+                width: 50%;
+                height: auto;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+
+            .main-topic-title {
+                text-align: center;
+                color: skyblue;
+                font-size: 48px;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                font-family: 'Arial', sans-serif;
+                letter-spacing: 2px;
+                text-shadow: 1px 1px 2px black;
+            }
+
+            .cards {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+                flex-wrap: wrap;
+                align-items: stretch;
+            }
+
+            .card2 {
+                border: none;
+                background-color:black;
+                opacity: 0.9;
+                backdrop-filter: blur(5px);
+                border-radius: 10px;
+                padding: 0 0 30px 0;
+                overflow: hidden;
+                width: 300px;
+                box-shadow: 0 4px 8px black;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .card2 h3 {
+                text-align: center;
+                font-size: 24px;
+                margin-top: 0;
+                color: lightblue;
+                padding:0 25px;
+                transition: color 0.3s ease;
+            }
+
+            .card2 p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+                text-align: center;
+                padding:0 25px;
+            }
+
+
+            .card2 img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .card2 .hr {
+                border: 1px solid lightblue;
+                margin: 0px 0;
+                border-radius: 10px;
+
+            }
+
+            .card2 ul {
+                list-style-type: disc;
+                padding-left: 25px;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+            .card2 ul li {
+                margin-bottom: 10px;
+                font-size: 16px;
+                color: white;
+            }
+
+            .card2:hover {
+                box-shadow: 0 15px 30px lightblue;
+                opacity: 0.8;
+                
+            }
+           
+            /*VIDEO BACKGROUND*/
+            .videoH{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                z-index:-1;
+            }
+            .videoH video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /*Overlay*/
+            .overlay-nav {
+                position: relative; 
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .stat-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 50px;
+                padding: 40px 20px;
+                background-color: rgb(0, 148, 207); 
+                text-align: center;
+                margin-bottom:80px;
+                
+            }
+
+            
+            .stat {
+                flex: 1;
+                text-align: center;
+                border-right: 1px solid white;
+                color: white;
+                font-family: 'Arial', sans-serif;
+                position: relative;
+            }
+
+            .stat:last-child {
+                border-right: none;
+            }
+
+            .stat h2 {
+                color: lightblue;
+                font-size: 40px;
+                margin:0;
+            }
+
+            .stat p {
+                font-size: 16px;
+                margin: 0;
+            }
+
+           .hero{
+            position: relative;
+            height: 100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            padding-top:80px;
+            margin-top: -110px;
+        }
+            .card{
+                position: relative;
+                z-index: 1;
+                max-width: 900px;
+                width: 90%;
+                margin: auto;
+                padding: 50px;
+            }
+ 
+        
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <a href="home.html"><img src="images/LOGOW.png" alt="Blue Horizon Logo - https://pin.it/4px63zw2t"></a>
+
+                <div class="spacer"></div>
+
+                    <a class="navbar active" href="home.html">Home</a>
+                    <a class="navbar" href="ais.html">Impact Simulator</a>
+                    <a class="navbar" href="gallery.html">Gallery</a>
+                    <a class="navbar" href="profile.html">Profile</a>
+                    <a class="navbar" href="feedback.html">Feedback</a>
+                    <a class="navbar" href="team.html">Team</a>
+                    <a class="navbar" href="sitemap.html">Sitemap</a>
+            </nav>
+        </header>
+
+        
+
+        <main>
+            <section class="hero">
+                <div class="videoH">
+                <video autoplay loop muted playsinline>
+                <source src="images/ocean.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                </div>
+                <div class="card">
+                    <div class="title">
+                        <p class="subtitle"><b>UN Sustainable Development Goal 14: Life Below Water</b></p><br>
+                        <img src="images/LOGOW.png" alt="Blue Horizon Logo">
+                        <p>Oceans cover more than 70% of our planet and are home to millions of marine species.
+                        However, pollution, overfishing, and climate change are threatening marine ecosystems. 
+                        Our website focuses on Sustainable Development Goal 14 (Life Below Water) and shows how 
+                        students and communities can take action to protect ocean life.</p><br>
+                        <p>Conserve and sustainably use the oceans, seas, and marine resources</p>
+
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="stat-box">
+            <div class="stat">
+                <h2>71%</h2>
+                <p>of Earth's surface covered by ocean</p>
+            </div>
+            <div class="stat">
+                <h2>3B+</h2>
+                <p>people rely on fish as their primary protein</p>
+            </div>
+            <div class="stat">
+                <h2>8M</h2>
+                <p>tons of plastic enter the ocean annually</p>
+            </div>
+            <div class="stat">
+                <h2>50%</h2>
+                <p>of coral reefs lost in the last 30 years</p>
+            </div>
+        </section>
+
+
+<br><br><br><br><br><br><br>
+<h1 class="main-topic-title">Preserving Our Blue Planet</h1>
+
+
+            <section class="cards">
+                <div class="card2">
+                    <img  src="images/car1.jpg" alt="ocean" referrerpolicy="https://pin.it/398zUE7Nq">
+                    <h3>Why oceans matter</h3><br>
+                    <p>Oceans sustain life, regulate climate, and protect biodiversity.</p>
+                    <hr class="hr"><br>
+                    <ul>
+                        <li>Produce over 50% of the world's oxygen</li>
+                        <li>Support billions of people</li>
+                        <li>Regulate global climate</li>
+                        <li>Provide food and livelihoods</li>
+                    </ul>
+                </div>
+
+                <div class="card2">
+                    <img  src="images/car2.jpg" alt="marine life" referrerpolicy="" >
+                    <h3>Threats to Marine Life</h3><br>
+                    <p>Human activities are damaging marine ecosystems worldwide.</p>
+                    <hr class="hr"><br>
+                    <ul>
+                        <li>Plastic pollution</li>
+                        <li>Overfishing</li>
+                        <li>Climate change</li>
+                    </ul>
+                </div>
+
+                <div class="card2">
+                    <img  src="images/car3.jpg" alt="Taking action to clean the ocean" referrerpolicy="https://pin.it/1uKDDv5rs">
+                    <h3>Take Action</h3><br>
+                    <p>Everyone can help protect the ocean with simple daily actions.</p>
+                    <hr class="hr"><br>
+                    <ul>
+                        <li>Reduce plastic use</li>
+                        <li>Join beach clean-ups</li>
+                        <li>Support sustainable seafood</li>
+                    </ul>
+                </div>
+                
+
+
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>A University of Westminster student project promoting action on UN Sustainable Development Goal 14.</p>
+            <p>© 2026 Blue Horizon | University of Westminster | 4COSC011W</p>
+
+            <p>Student Name</p>
+            <a href="pageEditor_ST1.html">Page Editor</a>
+            <a href="validation_ST1.html">Validation</a>
+        </footer>
+
+    </body>
+</html>
