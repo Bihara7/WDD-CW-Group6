@@ -160,7 +160,7 @@
                     background:white;
                     padding:20px;
                     border-radius:10px;
-                    max-width:900px;
+                    max-width:700px;
                     width:90%;
                     text-align:center;
                 }
@@ -180,6 +180,14 @@
                 cursor:pointer;
                 float:right;
                 }
+
+                .modal-content #font, .modal-content #color{
+                    padding: 5px;
+                    margin-top:10px;
+                    background-color: rgb(30, 30, 90);
+                    color:lightblue;
+                    font-weight: bold;
+                }
         </style>
 
         
@@ -193,6 +201,9 @@
                 var modalTitle = document.getElementById("modalTitle");
                 var modalDesc = document.getElementById("modalDesc");
                 var closeBtn = document.getElementById("closeBtn");
+                var fontBtn = document.getElementById("font");
+                var colorBtn = document.getElementById("color");
+                var modalContent = document.querySelector(".modal-content");
 
                 for (var i = 0; i < cards.length; i++) {
 
@@ -210,6 +221,7 @@
 
                 closeBtn.onclick = function(){
                     modal.style.display = "none";
+                    closeBtn.style.color = "Gray";
                 }
 
                 modal.onclick = function(event){
@@ -218,6 +230,19 @@
                     }
                 }
 
+                colorBtn.onclick = function(event){
+                        modalContent.style.background = "linear-gradient(skyblue,lightblue,darkblue,rgb(1, 1, 34))";
+                        modalTitle.style.color = "lightblue";
+                        modalDesc.style.color = "white";
+
+                }
+
+                fontBtn.onclick = function(event){
+                        modalContent.style.fontFamily = "Arial, sans-serif";
+                        modalTitle.style.fontFamily = "Arial, sans-serif";
+                        modalDesc.style.fontFamily = "Arial, sans-serif";
+                }
+                 
             });
 
         </script>
@@ -347,6 +372,10 @@
                         <h2 id="modalTitle"></h2>
 
                         <p id="modalDesc"></p>
+
+                        <button id="font">Change Font</button>
+
+                        <button id="color">Change Color</button>
 
                     </div>
 
