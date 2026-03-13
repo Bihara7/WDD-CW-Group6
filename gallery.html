@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,21 @@
 
         <style>
             body{
-                background:linear-gradient(skyblue,lightblue,darkblue,rgb(1, 1, 34))
+                background-color: black;
+            }
+            .videoH{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:auto;
+                z-index:-1;
+            }
+            .videoH video{
+                width: 100%;
+                height: 200%;
+                object-fit: cover;
+                opacity: 0.2;
             }
           #image{
                 text-align :center;
@@ -102,7 +115,7 @@
             }
 
             .card2:hover {
-                    box-shadow: 0 15px 30px lightblue;
+                    box-shadow: 0 15px 30px rgb(127, 199, 238);
                     transition: transform 0.3s ease;
             } 
             .popup .popuptext{
@@ -193,6 +206,7 @@
         
        
         <script>
+            
             document.addEventListener("DOMContentLoaded", function(){
 
                 var cards = document.querySelectorAll(".card2");
@@ -269,6 +283,12 @@
 
 
         <main>
+            <div class="videoH">
+                <video autoplay loop muted playsinline>
+                <source src="images/gal-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                </div>
              <!--<div class="imgcard">
                     <div class="image">
                     <img src="images/plastic.jpg">
