@@ -5,11 +5,6 @@
 }
 
 body{
-
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #001220, #001f3f, #000000);
-    background-attachment: fixed;
     font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x:hidden;
     padding-top:110px;
@@ -68,13 +63,15 @@ nav img{
 
 /* footer */
 footer{
-    bottom:0;
     width:100%;
     background:rgba(0,0,0,0.4);
     backdrop-filter:blur(12px);
+    z-index:1000;
+    bottom:0;
     color:white;
     text-align:center;
     padding:10px;
+    padding-top: 20px;
     margin-top:auto;
 }
 
