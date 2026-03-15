@@ -292,18 +292,64 @@
                     }
                 }
 
-                colorBtn.onclick = function(event){
-                        modalContent.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
-                        modalTitle.style.color = "lightblue";
-                        modalDesc.style.color = "white";
+                //colorBtn.onclick = function(event){
+                //        modalContent.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                  //      modalTitle.style.color = "lightblue";
+                    //    modalDesc.style.color = "white";
 
-                }
+                //}
 
-                fontBtn.onclick = function(event){
-                        modalContent.style.fontFamily = "Arial, sans-serif";
-                        modalTitle.style.fontFamily = "Arial, sans-serif";
-                        modalDesc.style.fontFamily = "Arial, sans-serif";
-                }
+                //fontBtn.onclick = function(event){
+                  //      modalContent.style.fontFamily = "Courier New, sans-serif";
+                    //    modalTitle.style.fontFamily = "Courier New, sans-serif";
+                      //  modalDesc.style.fontFamily = "Courier New, sans-serif";
+                //}
+                var colorChanged = false;
+
+                    colorBtn.onclick = function(){
+
+                        if(!colorChanged){
+
+                            modalContent.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                            modalTitle.style.color = "lightblue";
+                            modalDesc.style.color = "white";
+
+                            colorChanged = true;
+
+                        } else {
+
+                            modalContent.style.background = "white";
+                            modalTitle.style.color = "black";
+                            modalDesc.style.color = "black";
+
+                            colorChanged = false;
+                        }
+
+                    }
+                    var fontChanged = false;
+
+                        fontBtn.onclick = function(){
+
+                            if(!fontChanged){
+
+                                modalContent.style.fontFamily = "Courier New, monospace";
+                                modalTitle.style.fontFamily = "Courier New, monospace";
+                                modalDesc.style.fontFamily = "Courier New, monospace";
+
+                                fontChanged = true;
+
+                            } else {
+
+                                modalContent.style.fontFamily = "Arial, sans-serif";
+                                modalTitle.style.fontFamily = "Arial, sans-serif";
+                                modalDesc.style.fontFamily = "Arial, sans-serif";
+
+                                fontChanged = false;
+                            }
+
+                        }
+                
+
                 cards[i].addEventListener("mouseover", function(){
                     this.style.transform = "scale(1.05)";
                 });
