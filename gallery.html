@@ -28,7 +28,7 @@
                 width: 100%;
                 height: 200%;
                 object-fit:cover;
-                opacity: 0.2;
+                opacity: 0.05;
             }
           #image{
                 text-align :center;
@@ -62,7 +62,6 @@
                 opacity: 0.9;
                 backdrop-filter: blur(5px);
                 border-radius: 30px;
-                padding: 0 0 30px 0;
                 overflow: visible;
                 width: 300px;
                 box-shadow: 0 4px 8px black;
@@ -72,13 +71,18 @@
                 cursor: pointer;
             }
 
-            .card2 h3 {
+            .card2 h3{
+                position:absolute;
+                bottom:0px;
+                width:100%;
                 text-align: center;
-                font-size: 24px;
-                margin-top: 0;
-                color: lightblue;
-                padding:0 25px;
-                transition: color 0.3s ease;
+                padding:20px 0;
+                background:rgba(0,0,0,0.8);
+                color:white;
+                font-size:20px;
+                border-radius: 30px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
             }
 
             .card2 p {
@@ -93,9 +97,6 @@
             .card2 img {
                 width: 100%;
                 height: 250px;
-                object-fit: cover;
-                display: block;
-                margin-bottom: 20px;
                 border-radius: 30px;
             }
 
@@ -184,8 +185,8 @@
                 }
 
                 .modal-content img{
-                    max-width: 100%;
-                    max-height: 80vh;
+                    max-width: 85%;
+                    max-height: auto;
                     height: auto;
                     display: block;
                     margin: auto;
@@ -209,12 +210,18 @@
                 .gallery-header{
                     text-align:center;
                     padding:40px 20px;
+                    background:rgba(0,0,0,0.2);
+                    backdrop-filter:blur(5px);
+                    padding: auto;
+                    border-radius: 30px;
+                    margin: 50px auto;
+                    width: 80%;
                 }
 
                 .gallery-header h1{
                     font-size:40px;
                     color:lightblue;
-                    margin-bottom:10px;
+                    margin-bottom:5px;
                 }
 
                 .gallery-header p{
@@ -222,6 +229,11 @@
                     max-width:700px;
                     margin:auto;
                     color:#d6eaff;
+                }
+                .gallery-header hr{
+                    margin-left: 40%;
+                    margin-right: 40%;
+                  
                 }
         </style>
 
@@ -290,12 +302,12 @@
                         modalDesc.style.fontFamily = "Arial, sans-serif";
                 }
                 cards[i].addEventListener("mouseover", function(){
-    this.style.transform = "scale(1.05)";
-});
+                    this.style.transform = "scale(1.05)";
+                });
 
-cards[i].addEventListener("mouseout", function(){
-    this.style.transform = "scale(1)";
-});
+                cards[i].addEventListener("mouseout", function(){
+                    this.style.transform = "scale(1)";
+                });
                  
             });
 
@@ -323,9 +335,10 @@ cards[i].addEventListener("mouseout", function(){
 
 
         <main>
-            <section class="gallery-header">
+            <section class="gallery-header" class="card-bg">
 
                 <h1>Ocean Awareness Gallery</h1>
+                <hr><br>
                 <p>Explore images highlighting the importance of protecting marine life and achieving Sustainable Development Goal 14 – Life Below Water.</p>
 
             </section>
@@ -339,51 +352,71 @@ cards[i].addEventListener("mouseout", function(){
                     <div class="image">
                     <img src="images/plastic.jpg">
                     </div>-->
+             <!--coral img-->        
             <section class="cards">
                 <div class="card2"
-                    data-title="Why Oceans Matter"
-                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
-                    data-img="images/ex.jpg">
+                    data-title="Coral Reefs: The Rainforests of the Sea"
+                    data-desc="Coral reefs are one of the most diverse ecosystems on Earth. They provide shelter and food for thousands of marine species. Healthy coral reefs protect coastlines from storms and support millions of people through tourism and fishing."
+                    data-img="images/coral-gal.jpg">
 
-                    <img src="images/ex.jpg" alt="Ocean ecosystem">
+                    <img src="images/coral-gal.jpg" alt="Ocean ecosystem">
 
-                    <h3>Why oceans matter</h3>
-
-                </div>
-                <div class="card2"
-                    data-title="Why Oceans Matter"
-                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
-                    data-img="images/ex.jpg">
-
-                    <img src="images/ex.jpg" alt="Ocean ecosystem">
-
-                    <h3>Why oceans matter</h3>
+                    <h3>The Rainforests of the Sea</h3>
 
                 </div>
+
+                <!--Plastic img-->     
                 <div class="card2"
-                    data-title="Why Oceans Matter"
-                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
-                    data-img="images/car1.jpg">
+                    data-title="Plastic Pollution in Oceans"
+                    data-desc="Every year millions of tons of plastic waste enter the oceans. This pollution harms marine animals that often mistake plastic for food. Reducing plastic use and improving recycling can help protect marine ecosystems."
+                    data-img="images/Plastic-gal.jpg">
 
-                    <img src="images/car1.jpg" alt="Ocean ecosystem">
+                    <img src="images/Plastic-gal.jpg" alt="coral-gal = Photo by Francesco Ungaro: https://www.pexels.com/photo/photo-of-yellow-fishes-near-corals-3129556/">
 
-                    <h3>Why oceans matter</h3>
+                    <h3>Plastic Pollution in Oceans</h3>
 
                 </div>
+
+                <!--Turtles img-->     
                 <div class="card2"
-                    data-title="Why Oceans Matter"
-                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
-                    data-img="images/car1.jpg">
+                    data-title="Sea Turtles and Ocean Balance"
+                    data-desc="Sea turtles play an important role in maintaining healthy ocean ecosystems. They help control jellyfish populations and maintain seagrass beds. However, pollution, fishing nets, and habitat loss threaten their survival."
+                    data-img="images/turtle-gal.jpg">
 
-                    <img src="images/car1.jpg" alt="Ocean ecosystem">
+                    <img src="images/turtle-gal.jpg" alt="plastic-gal = Photo by Lucien Wanda: https://www.pexels.com/photo/piles-of-garbage-by-the-shore-2827735/">
 
-                    <h3>Why oceans matter</h3>
+                    <h3>Sea Turtles and Ocean Balance</h3>
+
+                </div>
+
+                <!--Oxygen img-->     
+                <div class="card2"
+                    data-title="Oceans: The Planet’s Oxygen Source"
+                    data-desc="More than half of the oxygen we breathe is produced by tiny marine plants called phytoplankton. These organisms live in the ocean and are essential for life on Earth. Protecting ocean health helps maintain this vital oxygen supply."
+                    data-img="images/oxygen-gal.jpg">
+
+                    <img src="images/oxygen-gal.jpg" alt="turtle-gal = Photo by Richard Segal: https://www.pexels.com/photo/black-and-white-turtle-1618606/">
+
+                    <h3>The Planet’s Oxygen Source</h3>
 
                 </div>
             </section>
 
 
             <section class="cards">
+                <!--Mangrove img-->     
+                <div class="card2"
+                    data-title="Why Oceans Matter"
+                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
+                    data-img="images/car1.jpg">
+
+                    <img src="images/car1.jpg" alt="oxygen-gal = Photo by Tom Fisk: https://www.pexels.com/photo/green-coral-reef-under-water-668790/ ">
+
+                    <h3>Why oceans matter</h3>
+
+                </div>
+
+                <!--Whale img-->     
                 <div class="card2"
                     data-title="Why Oceans Matter"
                     data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
@@ -394,6 +427,8 @@ cards[i].addEventListener("mouseout", function(){
                     <h3>Why oceans matter</h3>
 
                 </div>
+
+                <!--Biodiversity img-->     
                 <div class="card2"
                     data-title="Why Oceans Matter"
                     data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
@@ -404,16 +439,8 @@ cards[i].addEventListener("mouseout", function(){
                     <h3>Why oceans matter</h3>
 
                 </div>
-                <div class="card2"
-                    data-title="Why Oceans Matter"
-                    data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
-                    data-img="images/car1.jpg">
 
-                    <img src="images/car1.jpg" alt="Ocean ecosystem">
-
-                    <h3>Why oceans matter</h3>
-
-                </div>
+                <!--coral img-->     
                 <div class="card2"
                     data-title="Why Oceans Matter"
                     data-desc="Oceans produce over 50% of the world's oxygen and regulate the Earth's climate."
@@ -434,9 +461,12 @@ cards[i].addEventListener("mouseout", function(){
                         <span id="closeBtn">&times;</span>
 
                         <img id="modalImg" src="" alt="Expanded gallery image">
+                        <br>
 
                         <h2 id="modalTitle"></h2>
-
+                        <br>
+                        <hr>
+                        <br>
                         <p id="modalDesc"></p>
 
                         <button id="font">Change Font</button>
