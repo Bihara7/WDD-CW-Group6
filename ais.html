@@ -89,12 +89,53 @@
         .simulator-grid .action-card h3 {
             color: skyblue;
             margin-bottom: 10px;
+            font-size: 30px;
         }
 
         .simulator-grid .action-card p {
             margin-bottom: 15px;
             font-style: italic;
         }
+
+        .simulator-grid .action-card hr {
+            border: 0;
+            height: 1px;
+            background: white;
+            margin: 20px 0;
+        }
+
+        .simulator-grid .action-card .impact-points {
+            background: rgba(135, 206, 235, 0.1);
+            border: 1px solid rgba(135, 206, 235, 0.3);
+            border-radius: 8px;
+            padding: 1px;
+            margin-top: 10px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: skyblue;
+        }
+        
+        .simulator-grid .action-card .impact-points p {
+            margin-top: 5px;
+            margin-bottom: 7px;
+        }
+
+        .simulator-grid .action-card .impact-points .points-dots {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .simulator-grid .action-card .impact-points .points-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(135, 206, 235, 0.3);
+        }
+
+        .simulator-grid .action-card .impact-points .points-dots .dot.filled {
+            background: skyblue;
+        }
+
+
 
         .simulator-grid .action-card.selected {
             background: rgba(0, 191, 255, 0.2);
@@ -115,7 +156,7 @@
 
         .feedback-area h2 {
             color: skyblue;
-            font-size: 32px;
+            font-size: 38px;
             margin-bottom: 20px;
         }
 
@@ -194,57 +235,136 @@
                     <img src="images/ais1.jpg" alt="Use Reusable Bags - https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE">
                     <h3>Use Reusable Bags</h3>
                     <p>Commit to using reusable bags for shopping to reduce plastic waste.</p>
-                    <p><strong>Impact: 4 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 4 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,5)">
                     <img src="images/ais2.jpg" alt="Participate in Beach Cleanups - https://unsplash.com/photos/man-in-blue-crew-neck-t-shirt-holding-clear-plastic-bottle--h4B4-jzfnw">
                     <h3>Participate in Beach Cleanups</h3>
                     <p>Join local beach cleanup events to help remove plastic from shorelines.</p>
-                    <p><strong>Impact: 5 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div> 
+                        </div>
+                        <p><strong>Impact: 5 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,3)">
                     <img src="images/ais3.jpg" alt="Choose Sustainable Seafood - https://unsplash.com/photos/orange-and-white-fish-on-white-and-black-pebbles-tHjXXy1kk_Q">
                     <h3>Choose Sustainable Seafood</h3>
                     <p>Opt for sustainably sourced seafood to support ocean-friendly fishing practices.</p>
-                    <p><strong>Impact: 3 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 3 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,4)">
                     <img src="images/ais4.jpg" alt="Reduce Single-Use Plastics - https://unsplash.com/photos/a-wooden-sign-that-says-stop-plastic-save-earth-lf7UohVEk44">
                     <h3>Reduce Single-Use Plastics</h3>
                     <p>Avoid single-use plastics like straws and cutlery to minimize ocean pollution.</p>
-                    <p><strong>Impact: 4 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 4 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,5)">
                     <img src="images/ais5.jpg" alt="Support Ocean Conservation - https://unsplash.com/photos/body-of-water-during-golden-hour-oQl0eVYd_n8">
                     <h3>Support Ocean Conservation</h3>
                     <p>Donate to or volunteer with organizations working to protect marine ecosystems.</p>
-                    <p><strong>Impact: 5 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div> 
+                        </div>
+                        <p><strong>Impact: 5 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,4)">
                     <img src="images/ais6.jpg" alt="Educate Others - https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-large-aquarium-o2W3NlKlP0o">
                     <h3>Educate Others</h3>
                     <p>Share information about ocean conservation with friends and family.</p>
-                    <p><strong>Impact: 3 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot "></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 3 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,3)">
                     <img src="images/ais7.jpg" alt="Help Combat Climate Change - https://unsplash.com/photos/a-large-amount-of-ice-floating-on-top-of-a-body-of-water-y9EVABdWo90">
                     <h3>Help Combat Climate Change</h3>
                     <p>Take steps to reduce your carbon emissions and support climate action.</p>
-                    <p><strong>Impact: 2 Points</strong></p>
+                    <hr>
+                    <div class="impact-points">  
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 2 Points</strong></p>
+                    </div>
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,4)">
                     <img src="images/ais8.jpg" alt="Engage in Fundraising - https://unsplash.com/photos/group-of-people-on-beach-during-daytime-uXfYLTmF6fo">
                     <h3>Engage in Fundraising</h3>
                     <p>Support ocean conservation efforts through donations and fundraising activities.</p>
-                    <p><strong>Impact: 4 Points</strong></p>
-
+                    <hr>
+                    <div class="impact-points">
+                        <div class="points-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div> 
+                        </div>
+                        <p><strong>Impact: 4 Points</strong></p>
+                    </div>
                 </div>
 
             </div>
