@@ -382,12 +382,7 @@
                         Your Profile (Updates Progressively)
                     </h2>
 
-                    <!-- shown before user starts anything -->
-                    <div class="empty-state" id="emptyState">
-                        🌊<br><br>
-                        Your profile will appear here as you complete each step.<br>
-                        Start with Step 1 to begin.
-                    </div>
+
 
                     <!-- step 1 info - hidden until step 1 is done -->
                     <div class="profile-section" id="profileStep1">
@@ -576,7 +571,7 @@
         // if user skipped a prompt that row stays hidden
         function updateProfileDisplay(stepNumber) {
 
-            document.getElementById("emptyState").style.display = "none";
+           
 
             if (stepNumber === 1) {
                 document.getElementById("profileStep1").classList.add("visible");
@@ -666,7 +661,7 @@
             document.getElementById("profileStep2").classList.remove("visible");
             document.getElementById("profileStep3").classList.remove("visible");
             document.getElementById("completionMsg").classList.remove("visible");
-            document.getElementById("emptyState").style.display = "block";
+            
 
             ["stepBtn1","stepBtn2","stepBtn3","revisitBtn1","revisitBtn2","revisitBtn3"].forEach(function(id) {
                 document.getElementById(id).classList.remove("completed");
