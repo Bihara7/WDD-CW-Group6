@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3;url=home.html">
+    <meta http-equiv="refresh" content="4; url=home.html">
     <title>Blue Horizon</title>
 
-    <Style>
+    <style>
         body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #001220, #001f3f, #000000);
-    color: white;
-    background-attachment: fixed;
-
-    display: flex;
-    justify-content: center;   /* horizontal center */
-    align-items: center;       /* vertical center */
-    height: 100vh;             /* full screen height */
-}
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+            color: white;
+            background-attachment: fixed;
+        
+            display: flex;
+            justify-content: center;   
+            align-items: center;       
+            height: 100vh;             
+        }
         
         .logo{
             margin-top: 20px;
@@ -131,7 +131,21 @@
             filter:brightness(0.2); 
         }
   
-    </Style>
+    </style>
+    <script>
+
+        let time = 4;
+        let countdown = document.getElementById("countdown");
+
+        let timer = setInterval(function(){
+            time--;
+            countdown.textContent = "Entering site in " + time + "...";
+
+            if(time <= 1){
+                clearInterval(timer);
+            }
+        },1000);
+    </script>
 </head>
 
 <body>
@@ -174,18 +188,5 @@
 
 
 </body>
-<script>
 
-let time = 4;
-let countdown = document.getElementById("countdown");
-
-let timer = setInterval(function(){
-    time--;
-    countdown.textContent = "Entering site in " + time + "...";
-
-    if(time <= 1){
-        clearInterval(timer);
-    }
-},1000);
-</script>
 </html>
