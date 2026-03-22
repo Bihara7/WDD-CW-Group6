@@ -132,20 +132,7 @@
         }
   
     </style>
-    <script>
-
-        let time = 4;
-        let countdown = document.getElementById("countdown");
-
-        let timer = setInterval(function(){
-            time--;
-            countdown.textContent = "Entering site in " + time + "...";
-
-            if(time <= 1){
-                clearInterval(timer);
-            }
-        },1000);
-    </script>
+    
 </head>
 
 <body>
@@ -185,7 +172,20 @@
     </div>
 </div>
     <button onclick="window.location.href='home.html';">skip Intro</button>
+    <script>
 
+        let time = 4;
+        let countdown = document.getElementById("countdown");
+
+        let timer = setInterval(function(){
+            time--;
+            countdown.textContent = "Entering site in " + time + "...";
+
+            if(time <= 0){
+                clearInterval(timer);
+            }
+        },1000);
+    </script>
 
 </body>
 
