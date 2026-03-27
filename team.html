@@ -6,166 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Horizon</title>
     <link rel="stylesheet" href="Style.css">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+            color: white;
+            background-attachment: fixed
+                
+        }
+
+        .main {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 10px;
+            width: 95%;
+            height: 20%;
+
+        }
+
+        .main h1{
+            color: skyblue;
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .main p{
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        .introduce{
+            color: lightblue;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .team-container .member {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 20%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-container .member img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .team-container .member h2 {
+            margin: 10px 0 5px;
+            color: skyblue;
+        }
+
+        .team-container .member .role {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: whitesmoke;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .team-container .member .details {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: lightgray;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+
+        }
+
+        .team-container .member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-container .member:focus {
+            outline: none;
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-container .member .details {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: lightgray;
+        }
+
+        .team-container .member:hover .details {
+            display: block;
+        }
+
+        .team-container .member:focus .details {
+            display: block;
+        }
+
+        .team-container .member hr {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 15px 0;
+        }
+
+        .introduce{
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 10px;
+            width: 95%;
+            text-align: center;
+        }
+
+        .bottom-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 40px auto;
+            border-radius: 10px;
+            width: 95%;
+            text-align: center;
+        }
+
+    </style>
 </head>
-
-<style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    overflow-x:hidden;
-    padding-top:110px;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #0264af, #023467, #150025);
-    color: white;
-    background-attachment: fixed
-}
-
-h1,h2,h3,h4,h5,h6{
-    font-family:poppins;
-}
-
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    display:flex;
-    align-items:center;
-    padding:7px 40px;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(12px);
-    z-index:1000;
-}
-
-
-nav img{
-    height:50px;
-    width:auto;
-}
-
-
-.spacer{
-    flex:1;
-}
-
-
-.navbar{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    padding:20px 18px;
-    border-radius:8px;
-    transition:all 0.3s ease;
-    font-weight:800;
-}
-
-.navbar:hover{
-    background:rgba(255,255,255,0.15);
-    transform:translateY(-2px);
-}
-.navbar.active{
-    background:rgba(255,255,255,0.25);
-}
-
-
-footer{
-    bottom:0;
-    width:100%;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(12px);
-    color:white;
-    text-align:center;
-    padding:10px;
-    margin-top:auto;
-}
-
-footer a{
-    color:#90e0ef;
-    margin-left:10px;
-}
-    
-.main{
-    flex:1;
-}
-
-.team{
-    text-align: center;
-}
-.introduce{
-    text-align: center;
-}
-
-
-.team-container{
-
-    text-align:center;
-    gap:50px;
-    padding:40px;
-    text-align:center;
-    max-width:900px;
-    margin:auto;
-}
-
-.member{
-    display:inline-block;
-    margin:20px;
-    vertical-align:top;
-    background:rgb(255, 255, 255);
-    color: #0077b6;
-    border-radius:10px;
-    padding:20px;
-    transition:0.3s;
-    position:relative;
-    overflow:hidden;
-    width:350px;
-}
-
-.member:hover{
-    transform:scale(1.05);
-
-}
-
-.member img{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:10px;
-}
-
-.member h3{
-    margin:10px 0;
-}
-
-.role{
-    color:#f390eb;
-    font-weight:bold;
-    font-size: 13px;
-}
-
-
-.details {
-    opacity: 0;
-    font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    transition: 0.5s ;
-}
-
-.member:hover .details {
-    opacity: 1;
-    
-    
-}
-</style>
-
 <body>
     
     <header>
@@ -190,30 +167,36 @@ footer a{
 
 
     <main>
-        <h2 class="team">Team Page</h2>
-        <h6 class="introduce">This website was created through teamwork and collaboration.
-            Each member contributed unique skills to design, develop, and present ideas.</h6>
+        <section class="main">
+            <h1>Team Page</h1>
+            <p>This website was created through teamwork and collaboration.
+            Each member contributed unique skills to design, develop, and present ideas.</p>
+        </section>
 
 
         <div class="team-container">
 
 
             <div class="member" tabindex="0">
-                <img src="images/member1.jpeg" alt="Student 1">
-                <h2>Bihara Jayawardhana</h2>
-                <p class="role">Template & Home Page</p><br>
+                <img src="images/member1.jpg" alt="Student 1">
+                <h2>Vimuth Perera</h2>
+                <p class="role">Template & Home Page</p>
+
+                <hr>
 
                 <div class="details">
-                    <p>Responsible for creating the website template, navigation bar and home page design.</p>
+                    <p>Responsible for creating the website template, navigation bar and home page designand Gallery.</p>
                 </div>
             </div>
 
 
 
             <div class="member" tabindex="0">
-                <img src="images/member2.jpeg" alt="Student 2">
-                <h2>Vimuth Perera</h2>
-                <p class="role">Splash Screen & AIS</p><br>
+                <img src="images/member2.jpg" alt="Student 2">
+                <h2>Bihara Jayawardhana</h2>
+                <p class="role">Splash Screen & AIS</p>
+
+                <hr>
 
                 <div class="details">
                     <p>Implemented splash screen animation and SDG Action Impact Simulator with JavaScript.</p>
@@ -222,9 +205,11 @@ footer a{
 
 
         <div class="member" tabindex="0">
-            <img src="images/member3.jpeg" alt="Student 3">
+            <img src="images/member3.jpg" alt="Student 3">
             <h2>Janin Bandara</h2>
-            <p class="role">Feedback & Team Page</p><br>
+            <p class="role">Feedback & Team Page</p>
+
+            <hr>
 
             <div class="details">
                 <p>Developed the feedback form with validation and designed the interactive team page.</p>
@@ -234,9 +219,11 @@ footer a{
 
 
         <div class="member" tabindex="0">
-            <img src="images/member4.jpeg" alt="Student 4">
+            <img src="images/member4.jpg" alt="Student 4">
             <h2>Akash Karunakaran</h2>
-            <p class="role">User Profile & Sitemap</p><br>
+            <p class="role">User Profile & Sitemap</p>
+
+            <hr>
 
             <div class="details">
                 <p>Built the user profile system using JavaScript prompts and created the SVG sitemap.</p>
@@ -244,20 +231,58 @@ footer a{
         </div>
 
     </div>
+    
 
+    <div class="introduce">
+        <p>We are a team of four students who collaborated to create this website. Each of us contributed our unique skills and ideas to design, develop, and present our project on sustainable technology solutions for SDG 14: Life Below Water.</p>
+    </div>
 
+    <section class="bottom-section">
+        <h1>Our Mission</h1>
+        <p>Our mission is to promote sustainable technology solutions aligned with global development goals. We aim to raise awareness about the importance of protecting our oceans and encourage action towards achieving SDG 14: Life Below Water.</p>
+    </section>
 
 
     </main>
 
-        <br><br>
-        <footer>
-            <p>A University of Westminster student project promoting action on UN Sustainable Development Goal 14.</p>
-            <p>© 2026 Blue Horizon | University of Westminster | 4COSC011W</p>
+        <footer class="footer">
+            <div class="footer-container">
+                
+                <div class="footer-about">
+                    <h2>Blue Horizon</h2>
+                    <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
+                        Together, we protect our oceans for future generations.</p>
+                </div>
 
-            <p>Student Name</p>
-            <a href="pageEditor_ST1.html">Page Editor</a>
-            <a href="validation_ST1.html">Validation</a>
+                <div class="footer-name">
+                    <h3>Students Name</h3>
+                    <p>Vimuth Perera</p>
+                    <p>Bihara Jayawardhana</p>
+                    <p>Janin Bandara</p>
+                    <p>Akash Karunakaran</p>
+                </div>
+
+                <div class="footer-Slinks">
+                    <h3>Students</h3>
+                    <a href="pageEditor_ST1.html">Student 1</a>
+                    <a href="pageEditor_ST2.html">Student 2</a>
+                    <a href="pageEditor_ST3.html">Student 3</a>
+                    <a href="pageEditor_ST4.html">Student 4</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Validation</h3>
+                    <a href="validation_ST1.html">Validation 1</a>
+                    <a href="validation_ST2.html">Validation 2</a>
+                    <a href="validation_ST3.html">Validation 3</a>
+                    <a href="validation_ST4.html">Validation 4</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Blue Horizon | University of Westminster</p>
+            </div>
         </footer>
 
     </body>
