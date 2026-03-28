@@ -262,7 +262,7 @@
         <script>
             
             document.addEventListener("DOMContentLoaded", function(){
-
+            //Variables
                 var cards = document.querySelectorAll(".card2");
                 var modal = document.getElementById("galleryModal");
                 var modalImg = document.getElementById("modalImg");
@@ -285,7 +285,7 @@
                             this.style.transform = "scale(1)";
                             this.style.boxShadow = "0 4px 8px black";
                         });
-
+                        //modal box, with data
                         cards[i].addEventListener("click", function(){
 
                             modal.style.display = "flex";
@@ -297,7 +297,7 @@
                         });
 
                     }
-
+                //close button of modal box
                 closeBtn.onclick = function(){
                     modal.style.display = "none";
                     closeBtn.style.color = "Gray";
@@ -308,19 +308,7 @@
                         modal.style.display = "none";
                     }
                 }
-
-                //colorBtn.onclick = function(event){
-                //        modalContent.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
-                  //      modalTitle.style.color = "lightblue";
-                    //    modalDesc.style.color = "white";
-
-                //}
-
-                //fontBtn.onclick = function(event){
-                  //      modalContent.style.fontFamily = "Courier New, sans-serif";
-                    //    modalTitle.style.fontFamily = "Courier New, sans-serif";
-                      //  modalDesc.style.fontFamily = "Courier New, sans-serif";
-                //}
+                //change color- first user can change color if user wants to undo that move it also possible in here
                 var colorChanged = false;
 
                     colorBtn.onclick = function(){
@@ -343,6 +331,7 @@
                         }
 
                     }
+                 //change font- first user can change font if user wants to undo that move it also possible in here
                     var fontChanged = false;
 
                         fontBtn.onclick = function(){
@@ -408,16 +397,14 @@
                 <p>Explore images highlighting the importance of protecting marine life and achieving Sustainable Development Goal 14 – Life Below Water.</p>
 
             </section>
+            <!-- Background video-->
             <div class="videoH">
                 <video autoplay loop muted playsinline>
                 <source src="images/gal-video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video>
-                </div>
-             <!--<div class="imgcard">
-                    <div class="image">
-                    <img src="images/plastic.jpg">
-                    </div>-->
+            </div>
+
              <!--coral img-->        
             <section class="cards">
                 <div class="card2"
@@ -519,7 +506,7 @@
                 </div>
             </section>
 
-
+                <!--Modal box creating-->
                 <div id="galleryModal" class="modal">
 
                     <div class="modal-content">
@@ -535,6 +522,7 @@
                         <br>
                         <p id="modalDesc"></p>
 
+                        <!--Modal box functions buttons-->
                         <button id="font">Change Font</button>
 
                         <button id="color">Change Color</button>
