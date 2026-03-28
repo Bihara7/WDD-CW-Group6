@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -107,24 +107,85 @@
     flex: 0 0 500px;
     }
 
-    .card{
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius:10px;
-        width:400px;
-        box-shadow:0 4px 10px rgba(0,0,0,0.1);
-        padding:15px;
-    }
-
-    .card img{
-        width:100%;
-        border-radius:8px;
-        height:600px;
-    }
-
-    .card ul{
+    .img-text h2 {
         margin-left: 10px;
+    }
+    .img-text ul li {
+        margin-left: 20px;
+    }
+    .img-text p{
+        margin-left: 10px;
+    }
+    
+    .card {
+        border: none;
+        background-color:rgb(54, 54, 54);
+        opacity: 0.9;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 0 0 30px 0;
+        overflow: hidden;
+        width: 300px;
+        box-shadow: 0 4px 8px black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .card h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 0;
+        color: lightblue;
+        padding:0 25px;
+        transition: color 0.3s ease;
+    }
+
+    .card p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        text-align: center;
+        padding:0 25px;
+    }
+
+            /*Card Image*/
+    .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .card .hr {
+        border: 1px solid lightblue;
+        margin: 0px 0;
+        border-radius: 10px;
 
     }
+
+    .card ul {
+        list-style-type: disc;
+        padding-left: 25px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .card ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: white;
+    }
+
+    .card:hover {
+        box-shadow: 0px 1px 10px 1px lightblue;
+        opacity: 1;
+        transition: transform 0.3s ease;
+                
+    }
+
     .card button{
         background-color: transparent;
         color: lightblue;
@@ -155,7 +216,7 @@
     }
     .rate-count{
         font-size:50px;
-        color:#b978ef;
+        color:#ffffff;
         font-weight:bold;
     }
     .based-review{
@@ -185,8 +246,8 @@
     }
     .reviews{
         display:flex;
-        gap:20px;
-        padding:20px;
+        gap:100px;
+        padding:50px;
         overflow-x: auto;
         white-space: nowrap;
     
@@ -194,14 +255,19 @@
     }
 
     .review-card{
-        background:#f5f5f5;
-        color: black;
-        padding:15px;
-        border-radius:10px;
-        margin:20px;
-        width:100%;
-        height: 200px;
-        display: inline-block;
+        border: none;
+        background-color:rgb(54, 54, 54);
+        opacity: 0.9;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 20px;
+        overflow: hidden;
+        width: 400px;
+        box-shadow: 0 4px 8px black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
 
     }
     .review-card p{
@@ -212,7 +278,8 @@
     .seemore{
         padding: 2px 5px;
         border: none;
-        color: #6c63ff;
+        background: transparent;
+        color: lightblue;
         cursor: pointer;
         font-weight: 500;
     
@@ -237,12 +304,12 @@
 
 
     legend{
-        color:rgb(101, 1, 116); 
+        color:darkblue; 
     }
 
     label{
         font-size:14px;
-        color: rgb(101, 1, 116);
+        color: darkblue;
     }
 
     input, textarea{
@@ -259,23 +326,23 @@
 
     .counter{
         font-size:12px;
-        color:rgb(101, 1, 116);
+        color:darkblue;
         margin-bottom: 20px;
     }
 
     .submit-btn{
-        background-color: rgb(49, 4, 66);
+        background-color: darkblue;
         color: lightblue;
         border: 2px solid lightblue;
-        padding:10px;
-        display: block;
-        font-weight: bold;
+        padding: 10px;
         font-size: 14px;
-        border-radius:5px;
-        cursor:pointer;
-        width:100%;
-        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
         transition: all 0.3s ease;
+        display: block;
+        width: 400px;
+        cursor: pointer;
+        margin:20px auto;
     }
 
     .submit-btn:hover{
@@ -364,16 +431,16 @@
         <section class="programs">
 
         <div class="card">
-            <img  src="images/car1.jpg" alt="ocean" >
+            <img  src="images/fcard1.jpg" alt="ocean" >
             
             <div class="img-text">
                 <h2>Plastic Free Campaign</h2><br>
                 <p>Raise awareness about reducing plastic usage to protect oceans and aquatic life.</p>
                 <hr class="hr"><br>
                 <ul>
-                    <li>Reduces single-use plastic consumption</li>
+                    <li>Reduces single use plastic consumption</li>
                     <li>Prevents ocean pollution</li>
-                    <li>Encourages eco-friendly alternatives</li>
+                    <li>Encourages eco friendly alternatives</li>
                     <li>Educates communities about sustainability</li>
                 </ul>
                 <br>
@@ -382,7 +449,7 @@
         </div>
 
         <div class="card">
-            <img  src="images/car2.jpg" alt="marine life">
+            <img  src="images/fcard2.jpg" alt="marine life">
             <div class="img-text">
                 
                 <h2>Ocean Clean Up</h2><br>
@@ -400,7 +467,7 @@
         </div>
 
         <div class="card">
-            <img  src="images/car3.jpg" alt="Taking action to clean the ocean" >
+            <img  src="images/fcard3.jpg" alt="Taking action to clean the ocean" >
             <div class="img-text">
                 
                 <h2>Beach Protection Program</h2><br>
@@ -434,7 +501,7 @@
                 <p>The ocean awareness campaign was very informative. 
                     It encouraged students to take simple actions to 
                     protect marine life and keep our oceans clean<button class="seemore">...See more</button></p><br>
-                <p class="rname"><strong>Abhishek Sharma</strong> - 10-03-2026</p><br>
+                <p class="rname"><strong>Nimsara Harsha</strong> - 10-03-2026</p><br>
             </div>
 
             <div class="review-card">
@@ -539,12 +606,23 @@
                     <a href="validation_ST4.html">Validation 4</a>
                 </div>
 
+                <div class="footer-Stid">
+                    <h3>Student ID</h3>
+                    <p>20241115</p>
+                    <p>20241163</p>
+                    <p>20241037</p>
+                    <p>20241916</p>
+                </div>
+
             </div>
 
             <div class="footer-bottom">
                 <p>© 2026 Blue Horizon | University of Westminster</p>
             </div>
         </footer>
+
+    </body>
+</html>
 
 
 </body>
