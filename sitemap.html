@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Horizon</title>
+
+    <!-- global stylesheet shared by the whole team -->
     <link rel="stylesheet" href="Style.css">
 
     <style>
+        /* sitemap page embedded css - student 4 */
+
+        /* body background - same gradient as home.html */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -15,6 +20,8 @@
             color: white;
             background-attachment: fixed;
         }
+
+        /* faint background texture overlay same as other pages */
         body::before {
             content: "";
             position: fixed;
@@ -28,11 +35,34 @@
             z-index: -1;
             pointer-events: none;
         }
+
+        /* ocean video fixed behind all page content */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        /* video fills the screen without stretching */
+        .video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        /* centres and pads the sitemap content */
         .sitemap-section {
             max-width: 1100px;
             margin: 0 auto;
             padding: 60px 24px 80px;
         }
+
+        /* main heading matches the team page heading style */
         .sitemap-heading {
             text-align: center;
             color: lightblue;
@@ -42,6 +72,8 @@
             font-family: 'Arial', sans-serif;
             text-transform: uppercase;
         }
+
+        /* short description under the heading */
         .sitemap-subtitle {
             text-align: center;
             color: white;
@@ -49,6 +81,8 @@
             margin-bottom: 40px;
             line-height: 1.6;
         }
+
+        /* svg fills its container and scales on any screen size */
         .sitemap-svg {
             width: 100%;
             height: auto;
@@ -58,24 +92,34 @@
             background: rgba(0, 18, 32, 0.75);
             padding: 10px 0;
         }
+
+        /* when user hovers over a node the rect fills lightblue */
         a.smap-node:hover rect,
         a.smap-node:focus-visible rect {
             fill: lightblue;
             stroke: #ffffff;
             stroke-width: 2.5;
         }
+
+        /* text turns dark when node is hovered so it stays readable */
         a.smap-node:hover text,
         a.smap-node:focus-visible text {
             fill: #001220;
         }
+
+        /* remove default browser outline - focus shown by fill change above */
         a.smap-node:focus {
             outline: none;
         }
+
+        /* solid lines connecting parent nodes to child nodes */
         .conn {
             stroke: #1a4a6e;
             stroke-width: 1.5;
             fill: none;
         }
+
+        /* dashed line separates navigation pages from content pages */
         .conn-dash {
             stroke: #1a4a6e;
             stroke-width: 1.5;
@@ -83,6 +127,8 @@
             fill: none;
             opacity: 0.65;
         }
+
+        /* legend strip below the svg explaining node colours */
         .sitemap-legend {
             display: flex;
             gap: 16px;
@@ -94,6 +140,8 @@
             border-radius: 10px;
             border: 1px solid #1a4a6e;
         }
+
+        /* each item in the legend - swatch and label side by side */
         .legend-item {
             display: flex;
             align-items: center;
@@ -101,6 +149,8 @@
             font-size: 13px;
             color: lightblue;
         }
+
+        /* small coloured box showing what each node colour means */
         .legend-swatch {
             width: 22px;
             height: 14px;
@@ -109,44 +159,33 @@
             border-style: solid;
             flex-shrink: 0;
         }
-        .video-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        overflow: hidden;
-        }
-
-        .video-bg video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.4;
-        }
     </style>
 </head>
 
 <body>
+
+    <!-- ocean video background -->
     <div class="video-bg">
         <video autoplay loop muted playsinline>
             <source src="images/ocean.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+
+    <!-- header copied from home.html - sitemap link has active class -->
     <header>
         <nav>
             <a href="home.html">
                 <img src="images/LOGOW.png" alt="Blue Horizon Logo">
             </a>
             <div class="spacer"></div>
-            <a class="navbar" href="home.html">Home</a>
-            <a class="navbar" href="ais.html">Impact Simulator</a>
-            <a class="navbar" href="gallery.html">Gallery</a>
-            <a class="navbar" href="profile.html">Profile</a>
-            <a class="navbar" href="feedback.html">Feedback</a>
-            <a class="navbar" href="team.html">Team</a>
+            <a class="navbar"        href="home.html">Home</a>
+            <a class="navbar"        href="ais.html">Impact Simulator</a>
+            <a class="navbar"        href="gallery.html">Gallery</a>
+            <a class="navbar"        href="profile.html">Profile</a>
+            <a class="navbar"        href="feedback.html">Feedback</a>
+            <a class="navbar"        href="team.html">Team</a>
+            <!-- active class marks this as the current page -->
             <a class="navbar active" href="sitemap.html" aria-current="page">Sitemap</a>
         </nav>
     </header>
@@ -154,194 +193,255 @@
     <main>
         <section class="sitemap-section">
 
-    <h1 class="sitemap-heading">Website Sitemap</h1>
-    <p class="sitemap-subtitle">
-        A visual map of every page on Blue Horizon and how they connect.<br>
-        Click any node to visit that page, or press Tab to move between links.
-    </p>
+            <!-- page title and description -->
+            <h1 class="sitemap-heading">Website Sitemap</h1>
+            <p class="sitemap-subtitle">
+                A visual map of every page on Blue Horizon and how they connect.<br>
+                Click any node to visit that page, or press Tab to move between links.
+            </p>
 
-    <svg class="sitemap-svg"
-         viewBox="0 0 1000 480"
-         xmlns="http://www.w3.org/2000/svg"
-         role="img"
-         aria-label="Blue Horizon website sitemap showing all pages and connections">
+            <!--
+                SVG SITEMAP
+                Three row hierarchy:
+                  Row 0 - Splash Screen and Home Page
+                  Row 1 - Six navigation pages
+                  Row 2 - Four content pages one per student
 
-        <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="lightblue"/>
-            </marker>
-            <filter id="glow-home" x="-30%" y="-60%" width="160%" height="220%">
-                <feGaussianBlur stdDeviation="5" result="blur"/>
-                <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-            </filter>
-        </defs>
+                Accessibility:
+                  role="img" and aria-label describe the diagram to screen readers
+                  each node has a title element for screen reader descriptions
+                  tabindex="0" on every anchor for keyboard navigation
+                  hover and focus state handled by CSS above
 
-        <line x1="167" y1="52" x2="420" y2="52" stroke="lightblue" stroke-width="2" opacity="0.8" marker-end="url(#arrow)"/>
-        <line class="conn" x1="500" y1="74"  x2="500" y2="133"/>
-        <line class="conn" x1="101" y1="133" x2="899" y2="133"/>
-        <line class="conn" x1="101" y1="133" x2="101" y2="163"/>
-        <line class="conn" x1="261" y1="133" x2="261" y2="163"/>
-        <line class="conn" x1="421" y1="133" x2="421" y2="163"/>
-        <line class="conn" x1="581" y1="133" x2="581" y2="163"/>
-        <line class="conn" x1="741" y1="133" x2="741" y2="163"/>
-        <line class="conn" x1="899" y1="133" x2="899" y2="163"/>
-        <line class="conn-dash" x1="500" y1="133" x2="500" y2="285"/>
-        <line class="conn"      x1="158" y1="285" x2="842" y2="285"/>
-        <line class="conn" x1="158" y1="285" x2="158" y2="315"/>
-        <line class="conn" x1="386" y1="285" x2="386" y2="315"/>
-        <line class="conn" x1="614" y1="285" x2="614" y2="315"/>
-        <line class="conn" x1="842" y1="285" x2="842" y2="315"/>
+                Responsiveness:
+                  viewBox keeps aspect ratio fixed
+                  width 100% in CSS lets it scale to any container
+            -->
+            <svg class="sitemap-svg"
+                 viewBox="0 0 1000 480"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img"
+                 aria-label="Blue Horizon website sitemap showing all pages and connections">
 
-        <text x="500" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4d6d8a" letter-spacing="0.1em">NAVIGATION PAGES</text>
-        <text x="500" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4d6d8a" letter-spacing="0.1em">CONTENT PAGES - one per student</text>
+                <!-- DEFS - arrowhead marker and glow filter -->
+                <defs>
+                    <!-- arrowhead used on the splash to home connector line -->
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="lightblue"/>
+                    </marker>
 
-        <a href="splash.html" class="smap-node" tabindex="0">
-            <title>Splash Screen</title>
-            <rect x="27" y="30" width="140" height="44" rx="10" fill="#001220" stroke="#2e7d52" stroke-width="2"/>
-            <text x="97" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="lightblue" font-weight="bold">Splash Screen</text>
-        </a>
+                    <!-- glow effect on home page node to show it is the main hub -->
+                    <filter id="glow-home" x="-30%" y="-60%" width="160%" height="220%">
+                        <feGaussianBlur stdDeviation="5" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
 
-        <a href="home.html" class="smap-node" tabindex="0">
-            <title>Home Page</title>
-            <rect x="425" y="30" width="150" height="44" rx="10" fill="#003366" stroke="lightblue" stroke-width="2.5" filter="url(#glow-home)"/>
-            <text x="500" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="white" font-weight="bold">Home Page</text>
-        </a>
+                <!-- CONNECTOR LINES - drawn before nodes so nodes appear on top -->
 
-        <a href="gallery.html" class="smap-node" tabindex="0">
-            <title>Gallery</title>
-            <rect x="41" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
-            <text x="101" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Gallery</text>
-        </a>
+                <!-- splash to home lightblue arrow -->
+                <line x1="167" y1="52" x2="420" y2="52" stroke="lightblue" stroke-width="2" opacity="0.8" marker-end="url(#arrow)"/>
 
-        <a href="ais.html" class="smap-node" tabindex="0">
-            <title>Action Impact Simulator</title>
-            <rect x="201" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
-            <text x="261" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Impact</text>
-            <text x="261" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Simulator</text>
-        </a>
+                <!-- home down to horizontal navigation branch -->
+                <line class="conn" x1="500" y1="74"  x2="500" y2="133"/>
 
-        <a href="feedback.html" class="smap-node" tabindex="0">
-            <title>Feedback</title>
-            <rect x="361" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
-            <text x="421" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Feedback</text>
-        </a>
+                <!-- horizontal branch spanning all six navigation nodes -->
+                <line class="conn" x1="101" y1="133" x2="899" y2="133"/>
 
-        <a href="team.html" class="smap-node" tabindex="0">
-            <title>Team</title>
-            <rect x="521" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
-            <text x="581" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Team</text>
-        </a>
+                <!-- vertical drops from nav branch to each nav node -->
+                <line class="conn" x1="101" y1="133" x2="101" y2="163"/>
+                <line class="conn" x1="261" y1="133" x2="261" y2="163"/>
+                <line class="conn" x1="421" y1="133" x2="421" y2="163"/>
+                <line class="conn" x1="581" y1="133" x2="581" y2="163"/>
+                <line class="conn" x1="741" y1="133" x2="741" y2="163"/>
+                <line class="conn" x1="899" y1="133" x2="899" y2="163"/>
 
-        <a href="profile.html" class="smap-node" tabindex="0">
-            <title>Profile</title>
-            <rect x="681" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
-            <text x="741" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Profile</text>
-        </a>
+                <!-- dashed trunk separating nav tier from content tier -->
+                <line class="conn-dash" x1="500" y1="133" x2="500" y2="285"/>
 
-        <a href="sitemap.html" class="smap-node" tabindex="0">
-            <title>Sitemap - current page</title>
-            <rect x="839" y="163" width="120" height="40" rx="8" fill="lightblue" stroke="white" stroke-width="2"/>
-            <text x="899" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#001220" letter-spacing="0.07em">YOU ARE HERE</text>
-            <text x="899" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#001220" font-weight="bold">Sitemap</text>
-        </a>
+                <!-- horizontal branch for the four content pages -->
+                <line class="conn" x1="158" y1="285" x2="842" y2="285"/>
 
-        <a href="content_pg1.html" class="smap-node" tabindex="0">
-            <title>Content Page 1</title>
-            <rect x="88" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
-            <text x="158" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg1</text>
-        </a>
+                <!-- vertical drops from content branch to each content node -->
+                <line class="conn" x1="158" y1="285" x2="158" y2="315"/>
+                <line class="conn" x1="386" y1="285" x2="386" y2="315"/>
+                <line class="conn" x1="614" y1="285" x2="614" y2="315"/>
+                <line class="conn" x1="842" y1="285" x2="842" y2="315"/>
 
-        <a href="content_pg2.html" class="smap-node" tabindex="0">
-            <title>Content Page 2</title>
-            <rect x="316" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
-            <text x="386" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg2</text>
-        </a>
+                <!-- tier labels explaining each row -->
+                <text x="500" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4d6d8a" letter-spacing="0.1em">NAVIGATION PAGES</text>
+                <text x="500" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4d6d8a" letter-spacing="0.1em">CONTENT PAGES - one per student</text>
 
-        <a href="content_pg3.html" class="smap-node" tabindex="0">
-            <title>Content Page 3</title>
-            <rect x="544" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
-            <text x="614" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg3</text>
-        </a>
+                <!-- ROW 0 - entry point and hub -->
 
-        <a href="content_pg4.html" class="smap-node" tabindex="0">
-            <title>Content Page 4</title>
-            <rect x="772" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
-            <text x="842" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg4</text>
-        </a>
+                <!-- splash screen - dark green shows it is the site entry point -->
+                <a href="splash.html" class="smap-node" tabindex="0">
+                    <title>Splash Screen</title>
+                    <rect x="27" y="30" width="140" height="44" rx="10" fill="#001220" stroke="#2e7d52" stroke-width="2"/>
+                    <text x="97" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="lightblue" font-weight="bold">Splash Screen</text>
+                </a>
 
-        <text x="500" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4d6d8a">Each page footer links to its own Page Editor and Validation page.</text>
-        <text x="500" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4d6d8a">pageEditor_ST1-4.html and validation_ST1-4.html</text>
+                <!-- home page - glowing blue shows it is the main hub -->
+                <a href="home.html" class="smap-node" tabindex="0">
+                    <title>Home Page</title>
+                    <rect x="425" y="30" width="150" height="44" rx="10" fill="#003366" stroke="lightblue" stroke-width="2.5" filter="url(#glow-home)"/>
+                    <text x="500" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="white" font-weight="bold">Home Page</text>
+                </a>
 
-    </svg>
+                <!-- ROW 1 - six navigation pages -->
 
-    <div class="sitemap-legend" role="region" aria-label="Sitemap colour key">
-        <div class="legend-item">
-            <div class="legend-swatch" style="background:#001220; border-color:#2e7d52;" aria-hidden="true"></div>
-            <span>Entry (Splash)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-swatch" style="background:#003366; border-color:lightblue;" aria-hidden="true"></div>
-            <span>Home (hub)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-swatch" style="background:#001f3f; border-color:#1a6694;" aria-hidden="true"></div>
-            <span>Navigation pages</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-swatch" style="background:#001a33; border-color:#0094cf;" aria-hidden="true"></div>
-            <span>Content pages</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-swatch" style="background:lightblue; border-color:white;" aria-hidden="true"></div>
-            <span>Current page (Sitemap)</span>
-        </div>
-    </div>
+                <!-- gallery -->
+                <a href="gallery.html" class="smap-node" tabindex="0">
+                    <title>Gallery</title>
+                    <rect x="41" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
+                    <text x="101" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Gallery</text>
+                </a>
 
-</section>
-</main>
+                <!-- action impact simulator - two lines of text to fit the label -->
+                <a href="ais.html" class="smap-node" tabindex="0">
+                    <title>Action Impact Simulator</title>
+                    <rect x="201" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
+                    <text x="261" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Impact</text>
+                    <text x="261" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white" font-weight="bold">Simulator</text>
+                </a>
 
+                <!-- feedback -->
+                <a href="feedback.html" class="smap-node" tabindex="0">
+                    <title>Feedback</title>
+                    <rect x="361" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
+                    <text x="421" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Feedback</text>
+                </a>
+
+                <!-- team -->
+                <a href="team.html" class="smap-node" tabindex="0">
+                    <title>Team</title>
+                    <rect x="521" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
+                    <text x="581" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Team</text>
+                </a>
+
+                <!-- profile -->
+                <a href="profile.html" class="smap-node" tabindex="0">
+                    <title>Profile</title>
+                    <rect x="681" y="163" width="120" height="40" rx="8" fill="#001f3f" stroke="#1a6694" stroke-width="1.5"/>
+                    <text x="741" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white" font-weight="bold">Profile</text>
+                </a>
+
+                <!-- sitemap - filled lightblue because this is the current page -->
+                <a href="sitemap.html" class="smap-node" tabindex="0">
+                    <title>Sitemap - current page</title>
+                    <rect x="839" y="163" width="120" height="40" rx="8" fill="lightblue" stroke="white" stroke-width="2"/>
+                    <!-- you are here badge so user knows which page they are on -->
+                    <text x="899" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#001220" letter-spacing="0.07em">YOU ARE HERE</text>
+                    <text x="899" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#001220" font-weight="bold">Sitemap</text>
+                </a>
+
+                <!-- ROW 2 - content pages one per student - green to distinguish from nav pages -->
+
+                <!-- content page student 1 -->
+                <a href="content_pg1.html" class="smap-node" tabindex="0">
+                    <title>Content Page 1</title>
+                    <rect x="88" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
+                    <text x="158" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg1</text>
+                </a>
+
+                <!-- content page student 2 -->
+                <a href="content_pg2.html" class="smap-node" tabindex="0">
+                    <title>Content Page 2</title>
+                    <rect x="316" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
+                    <text x="386" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg2</text>
+                </a>
+
+                <!-- content page student 3 -->
+                <a href="content_pg3.html" class="smap-node" tabindex="0">
+                    <title>Content Page 3</title>
+                    <rect x="544" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
+                    <text x="614" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg3</text>
+                </a>
+
+                <!-- content page student 4 - this is my page -->
+                <a href="content_pg4.html" class="smap-node" tabindex="0">
+                    <title>Content Page 4</title>
+                    <rect x="772" y="315" width="140" height="40" rx="8" fill="#0a3d1f" stroke="#00c853" stroke-width="1.5"/>
+                    <text x="842" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#69f0ae" font-weight="bold">content_pg4</text>
+                </a>
+
+                <!-- note about footer links -->
+                <text x="500" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4d6d8a">Each page footer links to its own Page Editor and Validation page.</text>
+                <text x="500" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4d6d8a">pageEditor_ST1-4.html and validation_ST1-4.html</text>
+
+            </svg><!-- end SVG sitemap -->
+
+            <!-- colour legend explaining what each node colour means -->
+            <div class="sitemap-legend" role="region" aria-label="Sitemap colour key">
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background:#001220; border-color:#2e7d52;" aria-hidden="true"></div>
+                    <span>Entry (Splash)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background:#003366; border-color:lightblue;" aria-hidden="true"></div>
+                    <span>Home (hub)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background:#001f3f; border-color:#1a6694;" aria-hidden="true"></div>
+                    <span>Navigation pages</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background:#001a33; border-color:#0094cf;" aria-hidden="true"></div>
+                    <span>Content pages</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch" style="background:lightblue; border-color:white;" aria-hidden="true"></div>
+                    <span>Current page (Sitemap)</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- footer - same structure as all other pages -->
     <footer class="footer">
-            <div class="footer-container">
-                
-                <div class="footer-about">
-                    <h2>Blue Horizon</h2>
-                    <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
-                        Together, we protect our oceans for future generations.</p>
-                </div>
-
-                <div class="footer-name">
-                    <h3>Students Name</h3>
-                    <p>Vimuth Perera</p>
-                    <p>Bihara Jayawardhana</p>
-                    <p>Janin Bandara</p>
-                    <p>Akash Karunakaran</p>
-                </div>
-
-                <div class="footer-Slinks">
-                    <h3>Students</h3>
-                    <a href="pageEditor_ST1.html">Student 1</a>
-                    <a href="pageEditor_ST2.html">Student 2</a>
-                    <a href="pageEditor_ST3.html">Student 3</a>
-                    <a href="pageEditor_ST4.html">Student 4</a>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Validation</h3>
-                    <a href="validation_ST1.html">Validation 1</a>
-                    <a href="validation_ST2.html">Validation 2</a>
-                    <a href="validation_ST3.html">Validation 3</a>
-                    <a href="validation_ST4.html">Validation 4</a>
-                </div>
-
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>Blue Horizon</h2>
+                <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
+                    Together, we protect our oceans for future generations.</p>
             </div>
-
-            <div class="footer-bottom">
-                <p>© 2026 Blue Horizon | University of Westminster</p>
+            <div class="footer-name">
+                <h3>Students Name</h3>
+                <p>Vimuth Perera</p>
+                <p>Bihara Jayawardhana</p>
+                <p>Janin Bandara</p>
+                <p>Akash Karunakaran</p>
             </div>
-        </footer>
+            <div class="footer-Slinks">
+                <h3>Students</h3>
+                <a href="pageEditor_ST1.html">Student 1</a>
+                <a href="pageEditor_ST2.html">Student 2</a>
+                <a href="pageEditor_ST3.html">Student 3</a>
+                <a href="pageEditor_ST4.html">Student 4</a>
+            </div>
+            <div class="footer-links">
+                <h3>Validation</h3>
+                <a href="validation_ST1.html">Validation 1</a>
+                <a href="validation_ST2.html">Validation 2</a>
+                <a href="validation_ST3.html">Validation 3</a>
+                <a href="validation_ST4.html">Validation 4</a>
+            </div>
+            <div class="footer-Stid">
+                <h3>Student ID</h3>
+                <p>20241115</p>
+                <p>20241163</p>
+                <p>20241037</p>
+                <p>20241916</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Blue Horizon | University of Westminster</p>
+        </div>
+    </footer>
 
 </body>
 </html>
